@@ -6,7 +6,6 @@ public class LeituraDados {
     Scanner scanner = new Scanner(System.in);
 
     public String pegaOpcaoEscolhidaMenu() {
-        String endpoint;
         String menu = """
                      [1] Usuarios
                      [2] Posts
@@ -18,6 +17,7 @@ public class LeituraDados {
         System.out.print("Opcao escolhida: ");
         int escolha = scanner.nextInt();
 
+        String endpoint;
         if (escolha == 1) {
             endpoint = "users/";
         } else if (escolha == 2) {

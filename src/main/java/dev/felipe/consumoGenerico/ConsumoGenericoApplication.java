@@ -30,17 +30,14 @@ public class ConsumoGenericoApplication implements CommandLineRunner {
         String json = consomeApi.consomeJsonPlaceHolderPorId(escolhaEndpoint, escolhaId);
 
         var transformadorDeDados = new TransformaDados();
-        Object object;
 
         if (escolhaEndpoint.equals(Endpoints.USUARIO.getEndpoint())) {
-            object = transformadorDeDados.transformaJsonEmObjeto(json, Usuario.class);
+            System.out.println(transformadorDeDados.transformaJsonEmObjeto(json, Usuario.class));
         } else if (escolhaEndpoint.equals(Endpoints.POST.getEndpoint())) {
-            object = transformadorDeDados.transformaJsonEmObjeto(json, Post.class);
+            System.out.println(transformadorDeDados.transformaJsonEmObjeto(json, Post.class));
         } else {
-            object = transformadorDeDados.transformaJsonEmObjeto(json, Comentario.class);
+            System.out.println(transformadorDeDados.transformaJsonEmObjeto(json, Comentario.class));
         }
-
-        System.out.println(object);
 
     }
 }
